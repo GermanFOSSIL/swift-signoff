@@ -40,7 +40,11 @@ const systemSchema = z.object({
   description: z.string().optional(),
 });
 
-type SystemFormData = z.infer<typeof systemSchema>;
+type SystemFormData = {
+  name: string;
+  code: string;
+  description?: string;
+};
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();

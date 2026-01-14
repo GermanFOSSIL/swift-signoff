@@ -43,7 +43,12 @@ const disciplineSchema = z.object({
   color: z.string().default("#6366f1"),
 });
 
-type DisciplineFormData = z.infer<typeof disciplineSchema>;
+type DisciplineFormData = {
+  name: string;
+  code: string;
+  description?: string;
+  color: string;
+};
 
 const colorOptions = [
   { value: "#6366f1", label: "Índigo" },

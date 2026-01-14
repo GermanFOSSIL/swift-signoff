@@ -58,7 +58,13 @@ const projectSchema = z.object({
   location: z.string().optional(),
 });
 
-type ProjectFormData = z.infer<typeof projectSchema>;
+type ProjectFormData = {
+  name: string;
+  code: string;
+  description?: string;
+  client?: string;
+  location?: string;
+};
 
 export default function Projects() {
   const navigate = useNavigate();

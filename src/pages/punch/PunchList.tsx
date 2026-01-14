@@ -57,7 +57,13 @@ const punchSchema = z.object({
   priority: z.number().min(1).max(5).optional(),
 });
 
-type PunchFormData = z.infer<typeof punchSchema>;
+type PunchFormData = {
+  title: string;
+  description?: string;
+  project_id: string;
+  category: "A" | "B" | "C";
+  priority?: number;
+};
 
 export default function PunchList() {
   const navigate = useNavigate();
