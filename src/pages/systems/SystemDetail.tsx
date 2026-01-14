@@ -38,7 +38,11 @@ const subsystemSchema = z.object({
   description: z.string().optional(),
 });
 
-type SubsystemFormData = z.infer<typeof subsystemSchema>;
+type SubsystemFormData = {
+  name: string;
+  code: string;
+  description?: string;
+};
 
 export default function SystemDetail() {
   const { id } = useParams<{ id: string }>();

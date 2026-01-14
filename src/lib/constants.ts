@@ -113,3 +113,38 @@ export const FIELD_TYPES = [
   { value: "textarea", label: "Texto largo" },
   { value: "radio", label: "Opción única" },
 ] as const;
+
+// UI-friendly maps used by pages (badges, filters)
+export const ITR_STATUSES = {
+  draft: { label: "Borrador", class: "status-draft" },
+  in_review: { label: "En Revisión", class: "status-in-review" },
+  approved: { label: "Aprobado", class: "status-approved" },
+  rejected: { label: "Rechazado", class: "status-rejected" },
+} as const;
+
+export const PUNCH_STATUSES = {
+  open: { label: "Abierto", class: "bg-destructive text-destructive-foreground" },
+  in_progress: { label: "En Progreso", class: "bg-warning text-warning-foreground" },
+  cleared: { label: "Despejado", class: "bg-info text-info-foreground" },
+  closed: { label: "Cerrado", class: "bg-success text-success-foreground" },
+} as const;
+
+export const PUNCH_CATEGORIES = {
+  A: { label: "Categoría A", class: "punch-category-a" },
+  B: { label: "Categoría B", class: "punch-category-b" },
+  C: { label: "Categoría C", class: "punch-category-c" },
+} as const;
+
+export const ROLES = {
+  admin: { label: "Administrador", class: "bg-primary text-primary-foreground" },
+  supervisor: { label: "Supervisor", class: "bg-info text-info-foreground" },
+  inspector: { label: "Inspector", class: "bg-success text-success-foreground" },
+  user: { label: "Usuario", class: "bg-muted text-muted-foreground" },
+} as const;
+
+export const MEMBER_STATUSES = {
+  pending: { label: "Pendiente", class: "bg-warning text-warning-foreground" },
+  active: { label: "Activo", class: "bg-success text-success-foreground" },
+  inactive: { label: "Inactivo", class: "bg-muted text-muted-foreground" },
+} as const;
+

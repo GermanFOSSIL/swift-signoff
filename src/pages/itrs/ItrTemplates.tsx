@@ -54,7 +54,12 @@ const templateSchema = z.object({
   discipline_id: z.string().optional(),
 });
 
-type TemplateFormData = z.infer<typeof templateSchema>;
+type TemplateFormData = {
+  name: string;
+  code: string;
+  description?: string;
+  discipline_id?: string;
+};
 
 export default function ItrTemplates() {
   const navigate = useNavigate();

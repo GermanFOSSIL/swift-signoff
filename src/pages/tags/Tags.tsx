@@ -58,7 +58,17 @@ const tagSchema = z.object({
   serial_number: z.string().optional(),
 });
 
-type TagFormData = z.infer<typeof tagSchema>;
+type TagFormData = {
+  tag_number: string;
+  description?: string;
+  subsystem_id: string;
+  discipline_id?: string;
+  equipment_type?: string;
+  location?: string;
+  manufacturer?: string;
+  model?: string;
+  serial_number?: string;
+};
 
 export default function Tags() {
   const navigate = useNavigate();

@@ -54,7 +54,11 @@ const itrSchema = z.object({
   itr_number: z.string().min(1, "Ingresa un número de ITR"),
 });
 
-type ItrFormData = z.infer<typeof itrSchema>;
+type ItrFormData = {
+  template_id: string;
+  tag_id: string;
+  itr_number: string;
+};
 
 export default function Itrs() {
   const navigate = useNavigate();

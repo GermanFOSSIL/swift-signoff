@@ -55,7 +55,10 @@ const inviteSchema = z.object({
   role: z.enum(["admin", "supervisor", "inspector", "user"]),
 });
 
-type InviteFormData = z.infer<typeof inviteSchema>;
+type InviteFormData = {
+  email: string;
+  role: "admin" | "supervisor" | "inspector" | "user";
+};
 
 export default function OrgMembers() {
   const { user } = useAuth();
